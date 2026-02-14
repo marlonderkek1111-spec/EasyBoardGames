@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gomoku – EasyBoardGames</title>
+    <title>4 Gewinnt – EasyBoardGames</title>
     <link rel="stylesheet" href="../../css/global.css">
-    <link rel="stylesheet" href="gomoku.css">
+    <link rel="stylesheet" href="connect4.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <a href="../../index.html" class="back-link">← Zurück</a>
-        <h1 class="game-heading">⚫⚪ Gomoku</h1>
+        <h1 class="game-heading">🔴🟡 4 Gewinnt</h1>
 
         <div id="setup" class="setup-card">
             <p class="nickname-row">Dein Name: <input type="text" id="nicknameInput" placeholder="Gast" maxlength="20"></p>
@@ -37,14 +37,16 @@
         <div id="gameArea" class="game-area hidden">
             <div class="game-info">
                 <div class="player-info">
-                    <span class="player player1-info"><span class="symbol">⚫</span> <span id="name1">Spieler 1</span></span>
+                    <span class="player player1-info"><span class="symbol">🔴</span> <span id="name1">Spieler 1</span></span>
                     <span class="vs">vs</span>
-                    <span class="player player2-info"><span class="symbol">⚪</span> <span id="name2">Spieler 2</span></span>
+                    <span class="player player2-info"><span class="symbol">🟡</span> <span id="name2">Spieler 2</span></span>
                 </div>
                 <div id="turnIndicator" class="turn-indicator"><span id="turnText">Dein Zug</span></div>
             </div>
-            <p class="gomoku-hint">5 Steine in einer Reihe (waagerecht, senkrecht oder diagonal) gewinnen.</p>
-            <div id="board" class="board"></div>
+            <div class="board-wrap">
+                <div id="columns" class="columns"></div>
+                <div id="board" class="board"></div>
+            </div>
             <div class="game-controls">
                 <button id="rematchBtn" class="btn btn-secondary">Nochmal</button>
                 <button id="leaveBtn" class="btn btn-danger">Verlassen</button>
@@ -62,6 +64,6 @@
 
     <script src="../../js/player.js"></script>
     <script src="../../js/api.js"></script>
-    <script src="gomoku.js"></script>
+    <script src="connect4.js"></script>
 </body>
 </html>

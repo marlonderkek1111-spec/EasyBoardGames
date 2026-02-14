@@ -1,0 +1,95 @@
+.board-wrap {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 6px;
+}
+
+.col-btn {
+    padding: 8px;
+    font-size: 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.col-btn:hover:not(.disabled) {
+    border-color: var(--accent);
+    background: var(--bg);
+}
+
+.col-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 6px;
+    background: var(--border);
+    padding: 10px;
+    border-radius: var(--radius);
+}
+
+.cell {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.cell.red {
+    background: radial-gradient(circle at 30% 30%, #f87171, #b91c1c);
+    border-color: #b91c1c;
+}
+
+.cell.yellow {
+    background: radial-gradient(circle at 30% 30%, #fde047, #ca8a04);
+    border-color: #ca8a04;
+}
+
+.cell.winning {
+    box-shadow: 0 0 0 3px var(--accent);
+}
+
+.cell.dropping {
+    animation: drop 0.25s ease-out;
+}
+
+@keyframes drop {
+    0% { transform: translateY(-300%); opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.nickname-row {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.nickname-row input {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: var(--font);
+    margin-left: 0.5rem;
+    width: 140px;
+}
+
+@media (max-width: 480px) {
+    .board-wrap { max-width: 320px; }
+    .cell { font-size: 1.4rem; }
+}
