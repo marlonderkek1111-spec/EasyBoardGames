@@ -1,18 +1,12 @@
 {
-  "name": "easyboardgames",
+  "name": "easyboardgames-server",
   "version": "1.0.0",
-  "description": "2-Spieler-Spiele online mit SQLite-Backend",
-  "main": "index.html",
+  "private": true,
+  "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "server": "node server/index.js",
-    "deploy": "vercel --prod",
-    "preview": "vercel"
+    "start": "node index.js",
+    "dev": "node index.js"
   },
-  "keywords": ["games", "multiplayer", "board-games", "sqlite", "websocket"],
-  "author": "EasyBoardGames",
-  "license": "MIT",
-  "devDependencies": {},
   "dependencies": {
     "express": "^4.21.0",
     "ws": "^8.18.0"
