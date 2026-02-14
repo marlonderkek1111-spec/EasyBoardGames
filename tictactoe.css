@@ -1,0 +1,55 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 320px;
+    margin: 0 auto;
+    background: var(--border);
+    padding: 10px;
+    border-radius: var(--radius);
+}
+
+.cell {
+    aspect-ratio: 1;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.cell:hover:not(.taken) {
+    border-color: var(--accent);
+    background: var(--bg);
+}
+
+.cell.taken { cursor: not-allowed; }
+
+.cell.winning {
+    background: rgba(37, 99, 235, 0.15);
+    border-color: var(--accent);
+}
+
+.nickname-row {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.nickname-row input {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: var(--font);
+    margin-left: 0.5rem;
+    width: 140px;
+}
+
+@media (max-width: 480px) {
+    .board { max-width: 280px; }
+    .cell { font-size: 2rem; }
+}
